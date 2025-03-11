@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: w5mx2lvbl-nodejs-gitops
+  description: This is GitOps manifest for w5mx2lvbl-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=w5mx2lvbl-nodejs
+    backstage.io/kubernetes-id: w5mx2lvbl-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: w5mx2lvbl-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:w5mx2lvbl-nodejs
